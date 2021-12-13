@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Weather App</h1>
+  <h3>La tua citta le tue previsioni adesso</h3>
+  <h4>Previsioni correnti</h4>
+  <span>City</span>
+<input [(ngModel)]="cityInput" type="text" placeholder="enter city"name="" id="">
+<button (click)="search()">invia</button><br><br>
+<div *ngIf="weather">
+  <div class="d-flex flex-column">
+  <p>{{weather.name}} {{weather.sys.country}} -{{date | date: 'dd MMMM yyyy':'it'}}</p>
+  <div class="d-flex">
+    <div>
+      <span><p>{{weather.main.temp}}°C</p></span>
+    </div>
+    <div class="">
+      <img width="20px" height="20px" src="https://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png" alt="">
+    </div>
+
+  </div>
+  </div>
+</div>
+</div>
